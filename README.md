@@ -1,12 +1,10 @@
 ## Geant4 with G4Py Bindings in a Docker Container
 
-This is an attempt to compile Geant4 with Python support inside a Docker container.
-Currently used:
+This is my Docker image containing Geant4 with Python3 support inside a Docker container.
 
-* Geant4 10.6 (patch-01) (`geant4.10.06.p01.tar.gz`)
-* Ubuntu 18.04 with:
-    * Python 3.6.7
-    * Boost 1.65.1
+Software versions:
 
-Currently, I cannot get it to compile, see
-[the corresponding bug report](https://bugzilla-geant4.kek.jp/show_bug.cgi?id=2232).
+* Geant4 10.6 (patch-02) (`geant4.10.06.p02.tar.gz`)
+* Ubuntu 19.10 with:
+    * Python 3.7.5 (from Ubuntu)
+    * Boost 1.72.0 (custom installation)
