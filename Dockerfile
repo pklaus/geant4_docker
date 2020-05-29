@@ -1,4 +1,4 @@
-FROM ubuntu:19.10
+FROM ubuntu:20.04
 
 # We don't want to be asked any questions when packages get installed...
 ENV DEBIAN_FRONTEND=noninteractive
@@ -13,7 +13,8 @@ RUN apt-get update \
     libxpm-dev \
     python3 \
     python3-pip \
-    qt4-dev-tools \
+    qt5-default \
+    qttools5-dev-tools \
     tk-dev \
     wget \
  && rm -rf /var/lib/apt/lists/* /var/cache/apt/archives \
@@ -53,7 +54,8 @@ RUN wget http://geant4-data.web.cern.ch/geant4-data/releases/geant4.10.06.p02.ta
     -DGEANT4_USE_PYTHON=ON \
     ../geant4-src \
  && make -j$(nproc) \
- && make install
+ && make install \
+ && rm -rf /var/cache/geant4-src /var/cache/geant4-build
 
 ENV PYTHONPATH=$PYTHONPATH:/usr/lib/python3.7/site-packages
 
