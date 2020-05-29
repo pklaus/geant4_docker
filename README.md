@@ -4,9 +4,10 @@ This is my Docker image containing Geant4 with Python3 support inside a Docker c
 
 Software versions:
 
-* Geant4 10.6 (patch-02) (`geant4.10.06.p02.tar.gz`)
-* Ubuntu 20.04 with:
-    * Python 3.7.5 (from Ubuntu)
+* `geant4-10-06-patch-02` (`latest`):
+    * Ubuntu 20.04
+    * Python 3.8.2 (from Ubuntu)
     * Boost 1.72.0 (custom installation)
+    * Geant4 10.06.02
 
-[![asciicast](https://asciinema.org/a/335190.svg)](https://asciinema.org/a/335190)
+[![asciicast](https://asciinema.org/a/335204.svg)](https://asciinema.org/a/335204)

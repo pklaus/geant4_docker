@@ -13,8 +13,7 @@ RUN apt-get update \
     libxpm-dev \
     python3 \
     python3-pip \
-    qt5-default \
-    qttools5-dev-tools \
+    qtbase5-dev \
     tk-dev \
     wget \
  && rm -rf /var/lib/apt/lists/* /var/cache/apt/archives \
@@ -27,10 +26,10 @@ WORKDIR /var/cache/
 RUN wget --no-verbose https://dl.bintray.com/boostorg/release/1.72.0/source/boost_1_72_0.tar.gz && \
  tar xzf boost_1_72_0.tar.gz && \
  cd boost_1_72_0 && \
- ln -s /usr/local/include/python3.7m /usr/local/include/python3.7 && \
+ ln -s /usr/local/include/python3.8m /usr/local/include/python3.8 && \
  ./bootstrap.sh --with-python=$(which python3) && \
  ./b2 install && \
- rm /usr/local/include/python3.7 && \
+ rm /usr/local/include/python3.8 && \
  ldconfig && \
  cd - && rm -rf *
 
@@ -57,7 +56,7 @@ RUN wget http://geant4-data.web.cern.ch/geant4-data/releases/geant4.10.06.p02.ta
  && make install \
  && rm -rf /var/cache/geant4-src /var/cache/geant4-build
 
-ENV PYTHONPATH=$PYTHONPATH:/usr/lib/python3.7/site-packages
+ENV PYTHONPATH=$PYTHONPATH:/usr/lib/python3.8/site-packages
 
 WORKDIR /
 
